@@ -13,13 +13,17 @@ def GoodOrBad(stringy):
 
     for i in range(0, len(stringy)-1):
         pair = stringy[i:i+2]
-        print stringy[i+2:].find(pair)
+        if stringy[i+2:].find(pair) != -1:
+            double_pair = 25
 
-    if repeat > 0 or double_pair > 0:
+    if repeat > 0 and double_pair != 0:
         return True
     else:
         return False
 
 
-print GoodOrBad('uurcxstgmygtbstg')
+for string in strings:
+    if GoodOrBad(string):
+        nice += 1
 
+print nice
